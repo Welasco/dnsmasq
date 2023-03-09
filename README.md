@@ -12,6 +12,14 @@ docker run --name dnsmasq -d -p 53:53 -p 53:53/udp -e dnsmasqParameters="--addre
 
 The dnsmasqParameters variable will append all possible parameters at the initialization of the DNSMASQ.
 
+To run the same workload in Kubernetes you can use the manifest dnsmasq.yaml in this repo.
+
+```bash
+kubectl apply -f dnsmasq.yaml
+```
+
+It will create a Namespace dnsmasq, a Pod dnsmasq, a Service dnsmasq-service and a HPA dnsmasq-hpa.
+
 Check the official doc for reference:
 
 * https://thekelleys.org.uk/dnsmasq/docs/dnsmasq-man.html
